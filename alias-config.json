@@ -1,7 +1,7 @@
 {
     "Comment": "Creating alias",
     "Changes": [{
-               "Action": "CREATE",
+               "Action": "UPSERT",
                "ResourceRecordSet": {
                            "Name": "capstoneblue.co",
                            "Type": "A",
