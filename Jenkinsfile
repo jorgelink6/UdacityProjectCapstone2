@@ -45,14 +45,14 @@ pipeline {
         stage('Create blue container') {
             steps {
                 withAWS(region:'eu-west-2', credentials:'aws-static') {
-                    sh 'kubectl run blueimage --image=jorgelink6/apiml:ngix --port=80'
+                    sh 'kubectl run blueimage2 --image=jorgelink6/apiml:ngix --port=80'
                 }
             }
         }
         stage('Expose container') {
             steps {
                 withAWS(region:'eu-west-2', credentials:'aws-static') {
-                    sh 'kubectl expose deployment blueimage --type=LoadBalancer --port=80'
+                    sh 'kubectl expose deployment blueimage2 --type=LoadBalancer --port=80'
                 }
             }
         }
