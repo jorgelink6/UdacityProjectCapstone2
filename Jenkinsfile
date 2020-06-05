@@ -64,7 +64,7 @@ pipeline {
             steps {
                 withAWS(region:'eu-west-2', credentials:'aws-static') {
                     sh 'string=$(kubectl get services | grep elb)'
-                    sh 'loadbalancerID=$(echo $string | cut -f4 -d" ")'
+                    sh 'loadbalancerID=$(echo $string | cut -f4 -d ' ')'
                     sh 'echo $loadbalancerID'
                     sh 'chmod +x ./createalias.sh'
                     sh './createalias.sh $loadbalancerID > alias-config.json'
