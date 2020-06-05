@@ -45,7 +45,7 @@ pipeline {
         stage('Create blue container') {
             steps {
                 withAWS(region:'eu-west-2', credentials:'aws-static') {
-                    sh 'kubectl deployment blueimage2 --image=jorgelink6/apiml:ngix --port=80'
+                    sh 'kubectl create deployment blueimage2 --image=jorgelink6/apiml:ngix --port=80'
                 }
             }
         }
