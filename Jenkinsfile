@@ -38,11 +38,11 @@ pipeline {
         stage('Set current kubectl context') {
             steps {
                 withAWS(region:'eu-west-2', credentials:'aws-static') {
-                    sh 'kubectl config use-context arn:aws:eks:eu-west-2:141256150370:cluster/BlueClusterCapstone'
+                    sh 'kubectl config use-context arn:aws:eks:eu-west-2:141256150370:cluster/GreenClusterCapstone'
                 }
             }
         }
-        stage('Create blue container') {
+        stage('Create green container') {
             steps {
                 withAWS(region:'eu-west-2', credentials:'aws-static') {
                     sh 'kubectl create deployment blueimage2 --image=jorgelink6/apiml:ngix'
