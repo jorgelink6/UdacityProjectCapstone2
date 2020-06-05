@@ -45,7 +45,7 @@ pipeline {
         stage('Create blue container') {
             steps {
                 withAWS(region:'eu-west-2', credentials:'aws-static') {
-                    sh 'kubectl create deployment blueimage2 --image=jorgelink6/apiml:ngix'
+                    sh 'sudo kubectl create deployment blueimage2 --image=jorgelink6/apiml:ngix || (sudo kubectl delete deployment blueimage2 && sudo kubectl create deployment blueimage2 --image=jorgelink6/apiml:ngix)'
                 }
             }
         }
@@ -53,6 +53,7 @@ pipeline {
             steps {
                 withAWS(region:'eu-west-2', credentials:'aws-static') {
                     sh 'kubectl expose deployment blueimage2 --type=LoadBalancer --port=80'
+                    sh 'kubectl get svc'
                 }
             }
         }
