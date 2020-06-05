@@ -45,14 +45,14 @@ pipeline {
         stage('Create green container') {
             steps {
                 withAWS(region:'eu-west-2', credentials:'aws-static') {
-                    sh 'kubectl create deployment blueimage2 --image=jorgelink6/apiml:ngix'
+                    sh 'kubectl create deployment greenimage --image=jorgelink6/apiml:ngix || (kubectl delete deployment greenimage && kubectl create deployment greenimage --image=jorgelink6/apiml:ngix)'
                 }
             }
         }
         stage('Expose container') {
             steps {
                 withAWS(region:'eu-west-2', credentials:'aws-static') {
-                    sh 'kubectl expose deployment blueimage2 --type=LoadBalancer --port=80'
+                    sh 'kubectl expose deployment greenimage --type=LoadBalancer --port=80 || (kubectl delete services greenimage && kubectl expose deployment greenimage --type=LoadBalancer --port=80)'
                 }
             }
         }
