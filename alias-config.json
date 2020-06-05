@@ -1,0 +1,14 @@
+{
+    "Comment": "Creating alias",
+    "Changes": [{
+               "Action": "CREATE",
+               "ResourceRecordSet": {
+                           "Name": "capstoneblue.co",
+                           "Type": "A",
+                           "AliasTarget":{
+                                   "HostedZoneId": "Z0203785K6ARUAO9THFM",
+                                   "DNSName": "test.com.",
+                                   "EvaluateTargetHealth": false
+                             }}
+                         }]
+}
