@@ -54,7 +54,7 @@ pipeline {
                 withAWS(region:'eu-west-2', credentials:'aws-static') {
                     sh 'kubectl expose deployment blueimage2 --type=LoadBalancer --port=80 || (kubectl delete services blueimage2 && kubectl expose deployment blueimage2 --type=LoadBalancer --port=80)'
                     sh 'kubectl get svc'
-                    sh 'sleep 120'
+                    sh 'sleep 60'
 
                 }
             }
@@ -65,7 +65,7 @@ pipeline {
                 withAWS(region:'eu-west-2', credentials:'aws-static') {
                     sh 'string=$(kubectl get services | grep elb)'
                     sh 'loadbalancerID=$(echo $string | cut -f4 -d" ")'
-                    sh '$loadbalancerID'
+                    sh 'echo $loadbalancerID'
                     sh 'chmod +x ./createalias.sh'
                     sh './createalias.sh $loadbalancerID > alias-config.json'
                 }
