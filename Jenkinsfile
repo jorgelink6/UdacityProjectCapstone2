@@ -12,7 +12,7 @@ pipeline{
                         --region eu-west-2 \
                         --nodegroup-name standard-workers \
                         --node-type t3.medium \
-                        --nodes 3 \
+                        --nodes 1 \
                         --nodes-min 1 \
                         --nodes-max 4 \
                         --managed
@@ -31,7 +31,7 @@ pipeline{
                         --region eu-west-2 \
                         --nodegroup-name standard-workers \
                         --node-type t3.medium \
-                        --nodes 3 \
+                        --nodes 1 \
                         --nodes-min 1 \
                         --nodes-max 4 \
                         --managed
