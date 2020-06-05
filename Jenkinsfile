@@ -52,7 +52,7 @@ pipeline {
         stage('Expose container') {
             steps {
                 withAWS(region:'eu-west-2', credentials:'aws-static') {
-                    sh 'kubectl expose deployment blueimage2 --type=LoadBalancer --port=80 || (kubectl delete services && kubectl expose deployment blueimage2 --type=LoadBalancer --port=80)'
+                    sh 'kubectl expose deployment blueimage2 --type=LoadBalancer --port=80 || (kubectl delete services blueimage2 && kubectl expose deployment blueimage2 --type=LoadBalancer --port=80)'
                     sh 'kubectl get svc'
                 }
             }
