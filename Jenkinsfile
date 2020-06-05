@@ -56,7 +56,15 @@ pipeline {
                 }
             }
         }
-
+		stage('Domain redirect green') {
+			steps {
+				withAWS(region:'eu-west-2', credentials:'aws-static') {
+					sh '''
+						aws route53 change-resource-record-sets --hosted-zone-id Z0203785K6ARUAO9THFM --change-batch file://alias-config.json
+					'''
+				}
+			}
+		}
 
 
 
