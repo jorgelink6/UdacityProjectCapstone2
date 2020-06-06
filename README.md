@@ -53,6 +53,8 @@ The deplyoment pipeline part starts in the  **Deploy docker image to Docker Hub*
 
 Steps **9.** and **10.** were created as a solution to grab the Loadbalancer address and update with that value the target in the hosted zone record.
 
+Steps 
+
 #### steps
 5. Deploy docker image to Docker Hub
 6. Set current kubectl context 
