@@ -28,6 +28,19 @@ For the creation of the jenkins server I wrote a cloudformation script **Jenkins
 7. unzip
 8. aws
 9. eksctl
+
 ### Continous integration
 
-For validation only were used linting tools and the docker build succes,
+For validation only were used linting tools and the docker build succes
+
+#### steps
+1. start
+2. Lint HTML
+3. Lint Dockerfile
+4. Build Docker file
+
+### Continuos deployment
+
+The deplyoment pipeline part starts in the  **Deploy docker to Docker Hub**  stage and concludes updating/creating a record in the s3 Hosted Zone created for the project.
+
+
