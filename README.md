@@ -30,11 +30,11 @@ For the creation of the jenkins server I wrote a cloudformation script **Jenkins
 - eksctl
 
 ## Pipeline
-#### Continous integration
+### Continous integration
 
 For validation only were used linting tools and the docker build succes
 
-##### steps
+#### steps
 1. start
 2. Lint HTML
 3. Lint Dockerfile
