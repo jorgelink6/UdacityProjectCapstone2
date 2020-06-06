@@ -51,7 +51,7 @@ For validation only were used linting tools and the docker build succes
 
 The deplyoment pipeline part starts in the  **Deploy docker image to Docker Hub**  stage and concludes updating/creating a record in the s3 Hosted Zone created for the project that points to sites' URL. The hosted zone for the actual state of the project has to be manually created and then change the hardcoded --hosted-zone-id parameter.
 
-The steps **9.** and **10.** were created as a solution to grab the Loadbalancer address and update with that value the target in the hosted zone record.
+Steps **9.** and **10.** were created as a solution to grab the Loadbalancer address and update with that value the target in the hosted zone record.
 
 #### steps
 5. Deploy docker image to Docker Hub
