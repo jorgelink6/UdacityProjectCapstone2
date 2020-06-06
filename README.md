@@ -8,7 +8,7 @@ The project consist in create a full CI/CD pipeline to manage a service, in my c
 **master** : contains the cloudformation folder with the YAML file to create the Jenkins server. Also contains the Jenkinsfile to create the blue and green clusters
 
 **blue** :  Docker and Jenkins file to deploy blue index.html
- 
+
 **green** : Docker and Jenkins file to deploy green index.html
 
 
@@ -16,8 +16,7 @@ The project consist in create a full CI/CD pipeline to manage a service, in my c
 
 #### Jenkins server
 
-for the creation of the jenkins server I wrote a cloudformation script that will create a EC2 insntance and install the necesary dependencies to run the pipeline
-
+For the creation of the jenkins server I wrote a cloudformation script **JenkinsServer.yml** that will create a fresh EC2 insntance and install the necesary dependencies to run the pipeline correctly.
 ##### Dependencies
 1.
 2.
