@@ -42,7 +42,9 @@ For validation only were used linting tools and the docker build succes
 
 ### Continuos deployment
 
-The deplyoment pipeline part starts in the  **Deploy docker to Docker Hub**  stage and concludes updating/creating a record in the s3 Hosted Zone created for the project.
+The deplyoment pipeline part starts in the  **Deploy docker image to Docker Hub**  stage and concludes updating/creating a record in the s3 Hosted Zone created for the project that points to sites' URL. The hosted zone for the actual state of the project has to be manually created and then change the hardcoded --hosted-zone-id parameter.
+
+The steps **9.** and **10.** were created as a solution to grab the Loadbalancer address and update with that value the target in the hosted zone record.
 
 #### steps
 5. Deploy docker image to Docker Hub
@@ -50,7 +52,7 @@ The deplyoment pipeline part starts in the  **Deploy docker to Docker Hub**  sta
 7. Create blue container
 8. Expose container
 9. Declaring variables
-10. Generating new alias-config file from template
+10. Generating new alias-config.json file from template
 11. Domain s3 redirect blue
 
 
