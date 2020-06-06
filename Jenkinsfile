@@ -56,13 +56,36 @@ pipeline {
                 }
             }
         }
-        stage('Domain redirect green') {
+        stage('declaring variables') {  
+            steps {
+                script {
+                    withAWS(region:'eu-west-2', credentials:'aws-static') {
+                        echo '===========Testing============'
+                        env.string2 = sh(script: 'kubectl get services | grep elb', , returnStdout:true)
+                        env.loadbalancerID = sh(script: '(echo ${string2} | cut -f4 -d \" \")', , returnStdout:true)
+                    }
+                    
+                }
+            }
+        }
+        stage('generating new alias-config file from template') {
+            steps {
+                withAWS(region:'eu-west-2', credentials:'aws-static') {
+                    sh 'echo ${loadbalancerID}'
+                    sh 'chmod +x ./createalias.sh'
+                    sh './createalias.sh ${loadbalancerID} > alias-config.json'
+                }
+            }
+        }
+
+        stage('Domain s3 redirect Green') {
             steps {
                 withAWS(region:'eu-west-2', credentials:'aws-static') {
                     sh 'aws route53 change-resource-record-sets --hosted-zone-id Z0203785K6ARUAO9THFM --change-batch file://alias-config.json'
                 }
             }
         }
+
 
 
 
