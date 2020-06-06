@@ -6,8 +6,8 @@ The project consist in create a full CI/CD pipeline to manage a service, in my c
 
 ## Branch distribution
 **master** : contains the cloudformation folder with the YAML file to create the Jenkins server. Also contains the Jenkinsfile to create the blue and green clusters
-**blue** :
-**green** :
+**blue** :  Docker and Jenkins file to deploy blue index.html 
+**green** : Docker and Jenkins file to deploy green index.html
 
 
 ### Initial Setup
