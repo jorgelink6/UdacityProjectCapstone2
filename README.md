@@ -8,7 +8,7 @@ The project consist in create a full CI/CD pipeline to manage a service, in my c
 master \n
 blue  \n
 green \n
-<font color='blue'>blue branch</font>
+
 
 ### Initial Setup
 
