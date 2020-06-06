@@ -5,9 +5,9 @@
 The project consist in create a full CI/CD pipeline to manage a service, in my case I selected a Ngix docker server over wich I built a pipeline of validation and deployment. A green/blue dployment strategy will be used.
 
 ## Branch distribution
-master \n
-blue  \n
-green \n
+**master** : contains the cloudformation folder with the YAML file to create the Jenkins server. Also contains the Jenkinsfile to create the blue and green clusters
+**blue** :
+**green** :
 
 
 ### Initial Setup
