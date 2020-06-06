@@ -16,7 +16,7 @@ The project consist in create a full CI/CD pipeline to manage a service, in my c
 
 #### Jenkins server
 
-For the creation of the jenkins server I wrote a cloudformation script **JenkinsServer.yml** that will create a fresh EC2 insntance and install, start and authorize the necesary dependencies to run the pipeline correctly. use this file with **JenkinsServer-params.json**. You will need to configure your awscli and install jenkins blue ocean and aws pipeline pluggins
+For the creation of the jenkins server I wrote a cloudformation script **JenkinsServer.yml** that will create a fresh EC2 insntance and install, start and authorize the necesary dependencies to run the pipeline correctly. Use this file with **JenkinsServer-params.json**. You will need to configure your awscli and install jenkins blue ocean and aws pipeline pluggins
 
 I included two helper scripts to better use awscli with cloudformation : create.sh and update.sh
 
