@@ -22,12 +22,12 @@ For the creation of the jenkins server I wrote a cloudformation script **Jenkins
 - default-jdk
 - jenkins
 - docker.io
-4. hadolint
-5. kubectl
-6. tidy
-7. unzip
-8. aws
-9. eksctl
+- hadolint
+- kubectl
+- tidy
+- unzip
+- aws
+- eksctl
 
 ## Pipeline
 #### Continous integration
