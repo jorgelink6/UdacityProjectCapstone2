@@ -1,4 +1,4 @@
-FRO nginx:alpine
+FROM nginx:alpine
 
 ## Step 2:
 COPY index.html /usr/share/nginx/html
