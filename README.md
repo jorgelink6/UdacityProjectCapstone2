@@ -5,9 +5,9 @@
 The project consist in create a full CI/CD pipeline to manage a service, in my case I selected a Ngix docker server over wich I built a pipeline of validation and deployment. A green/blue dployment strategy will be used.
 
 ## Branch distribution
-master
-blue 
-green
+master \n
+blue  \n
+green \n
 <font color='blue'>blue branch</font>
 
 ### Initial Setup
