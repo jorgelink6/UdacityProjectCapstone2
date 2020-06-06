@@ -15,7 +15,8 @@ pipeline{
                         --nodes 1 \
                         --nodes-min 1 \
                         --nodes-max 4 \
-                        --managed
+                        --managed \
+                        || echo "blue cluster already created"
                     '''
                 }
             }
@@ -34,7 +35,8 @@ pipeline{
                         --nodes 1 \
                         --nodes-min 1 \
                         --nodes-max 4 \
-                        --managed
+                        --managed \
+                        || echo "green cluster already created"
                     '''
                 }
             }
