@@ -1,6 +1,6 @@
 # Capstone project for devops udacity nanodegree
 
-## project
+## Project
 
 The project consist in create a full CI/CD pipeline to manage a service, in my case I selected a Ngix docker server over wich I built a pipeline of validation and deployment. A green/blue dployment strategy will be used.
 
@@ -19,9 +19,9 @@ The project consist in create a full CI/CD pipeline to manage a service, in my c
 For the creation of the jenkins server I wrote a cloudformation script **JenkinsServer.yml** that will create a fresh EC2 insntance and install, start and authorize the necesary dependencies to run the pipeline correctly. you will need to config your awscli and install jenkins blue ocean and aws pipeline pluggins
 
 ##### Dependencies
-1. default-jdk
-2. jenkins
-3. docker.io
+- default-jdk
+- jenkins
+- docker.io
 4. hadolint
 5. kubectl
 6. tidy
