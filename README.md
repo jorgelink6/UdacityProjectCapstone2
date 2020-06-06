@@ -16,11 +16,17 @@ The project consist in create a full CI/CD pipeline to manage a service, in my c
 
 #### Jenkins server
 
-For the creation of the jenkins server I wrote a cloudformation script **JenkinsServer.yml** that will create a fresh EC2 insntance and install the necesary dependencies to run the pipeline correctly.
+For the creation of the jenkins server I wrote a cloudformation script **JenkinsServer.yml** that will create a fresh EC2 insntance and install, start and authorize the necesary dependencies to run the pipeline correctly.
 ##### Dependencies
-1.
-2.
-
+1. default-jdk
+2. jenkins
+3. docker.io
+4. hadolint
+5. kubectl
+6. tidy
+7. unzip
+8. aws
+9. eksctl
 ### Continous integration
 
 For validation only were used linting tools and the docker build succes,
