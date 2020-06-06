@@ -1,5 +1,8 @@
+#define parameters which are passed in.
+#define the template.
+cat  << EOF
 {
-    "Comment": "Creating alias for green",
+    "Comment": "Creating alias",
     "Changes": [{
                "Action": "UPSERT",
                "ResourceRecordSet": {
@@ -7,8 +10,9 @@
                            "Type": "A",
                            "AliasTarget":{
                                    "HostedZoneId": "ZHURV8PSTC4K8",
-                                   "DNSName": "a299de71fe6b9459e80aa9d4637c3d67-1224567761.eu-west-2.elb.amazonaws.com",
+                                   "DNSName": "$1",
                                    "EvaluateTargetHealth": false
                              }}
                          }]
 }
+EOF
