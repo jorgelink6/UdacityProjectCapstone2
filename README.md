@@ -44,6 +44,7 @@ For validation only were used linting tools and the docker build succes
 
 The deplyoment pipeline part starts in the  **Deploy docker to Docker Hub**  stage and concludes updating/creating a record in the s3 Hosted Zone created for the project.
 
+#### steps
 5. Deploy docker image to Docker Hub
 6. Set current kubectl context 
 7. Create blue container
